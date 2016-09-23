@@ -1,0 +1,57 @@
+/**app.wxss**/
+.clearfix{
+  zoom: 1;
+}
+.clearfix:after{
+  content:'';
+  display: table;
+  clear:both;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue",Arial,"PingFang SC","Microsoft YaHei",sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+}
+.film-item{
+  width: 100%;
+  padding: 10px;
+  display: flex;
+}
+.film-image{
+  width: 128px;
+}
+.film-image image{
+  width: 100%;
+  height: 180px;
+}
+.film-info{
+  padding-left: 10px;
+  flex: 1;
+}
+.film-info view{
+  margin-bottom: 10px;
+}
+.film-info .label{
+  margin-right: 5px;
+}
+.film-info .rating{
+  color: #e09015;
+}
+.film-title{
+ font-size: 18px;
+ margin-right: 10px;
+}
+.film-year{
+  font-size: 16px;
+  color: #999;
+}
+.person{
+  margin-right: 5px;
+}

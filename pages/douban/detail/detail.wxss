@@ -1,0 +1,7 @@
+.summary .title{
+    font-size: 16px;
+    margin: 15px 0;
+}
+.summary .content{
+    text-indent: 2em;
+}

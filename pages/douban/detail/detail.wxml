@@ -1,0 +1,41 @@
+<view class="container">
+  <view class="film-item" bindtap="viewDetail" value="{{film.id}}" data-id="{{film.id}}" data-title="{{film.title}}">
+      <view class="film-image">
+        <image src="{{film.images.medium}}"></image>
+      </view>
+      <view class="film-info">
+        <view>
+          <text class="film-title">{{film.title}}</text>
+          <text class="film-year">{{film.year}}</text>
+        </view>
+        <view class="film-rating">
+          <block wx:if="{{film.rating.average > 0}}">
+            <text class="label">评分</text>
+            <text class="rating">{{film.rating.average}}</text>
+          </block>
+          <block wx:else>
+            <text class="label">暂无评分</text>
+          </block>
+        </view>
+        <view class="directors">
+          <text class="label">导演</text>
+          <block wx:for-items="{{film.directors}}" wx:for-item="director">
+            <text class="person">{{director.name}}</text>
+          </block>
+        </view>
+        <view class="casts">
+          <text class="label">主演</text>
+          <block wx:for-items="{{film.casts}}" wx:for-item="cast">
+            <text class="person">{{cast.name}}</text>
+          </block>
+        </view>
+      </view> 
+    </view>
+    <view class="summary">
+      <text class="title">剧情简介</text>
+      <view class="content">
+        {{film.summary}}
+      </view>
+      
+    </view>
+</view>
