@@ -1,4 +1,3 @@
-var util = require('../../../utils/util.js')
 Page({
   data: {
     film: {},
@@ -13,7 +12,7 @@ Page({
   onLoad: function (options) {
     var that = this
     var id = options.id
-    
+
     fetch('https://api.douban.com/v2/movie/subject/' + id).then(function(response){
       if(response.status !== 200){
         console.log("error："+ response.status)
@@ -25,6 +24,6 @@ Page({
           options: options
         })
       })
-    }) 
+    })
   }
 })
