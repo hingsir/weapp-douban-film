@@ -1,3 +1,6 @@
+.summary{
+    padding: 0 10px;
+}
 .summary .title{
     font-size: 16px;
     margin: 15px 0;
