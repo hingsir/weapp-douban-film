@@ -1,7 +1,7 @@
 <view class="page-loading {{showLoading ? '' : 'hide'}}">
   <text class="weui-loading"/><text class="loading-text">玩命加载中</text>
 </view>
-<view class="container film-list">
+<scroll-view style="height: 100%;" scroll-y="true" class="container film-list" bindscroll="scroll">
   <block wx:for-items="{{films}}" wx:for-item="film">
     <view class="film-item" bindtap="viewDetail" data-id="{{film.id}}" data-title="{{film.title}}">
       <view class="film-image">
@@ -36,4 +36,4 @@
       </view> 
     </view>
   </block>
-</view>
+</scroll-view>
