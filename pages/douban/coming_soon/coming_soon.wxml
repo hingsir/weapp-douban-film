@@ -1,3 +1,6 @@
+<view class="page-loading {{showLoading ? '' : 'hide'}}">
+  <text class="weui-loading"/><text class="loading-text">玩命加载中</text>
+</view>
 <view class="container film-list">
   <block wx:for-items="{{films}}" wx:for-item="film">
     <view class="film-item" bindtap="viewDetail" data-id="{{film.id}}" data-title="{{film.title}}">

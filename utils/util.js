@@ -16,6 +16,17 @@ function formatNumber(n) {
   return n[1] ? n : '0' + n
 }
 
+function formatLocation(longitude, latitude) {
+  longitude = longitude.toFixed(2)
+  latitude = latitude.toFixed(2)
+
+  return {
+    longitude: longitude.toString().split('.'),
+    latitude: latitude.toString().split('.')
+  }
+}
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  formatLocation: formatLocation
 }
