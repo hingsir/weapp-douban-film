@@ -29,5 +29,23 @@ module.exports = {
     this.getLocation(function(location){
       cb(location.addressComponent.city.replace('市', ''))
     })
+  },
+  fetchFilms: function(url, city, start, count, cb){
+    var that = this
+    fetch(url + '?city=' + city + '&start=' + start + '&count=' + count).then(function(response){
+      response.json().then(function(data){
+        if(data.subjects.length === 0){
+          that.setData({
+            hasMore: false,
+          })
+        }else{
+          that.setData({
+            films: that.data.films.concat(data.subjects),
+            start: that.data.start + data.subjects.length
+          })
+        }
+        cb(data)
+      })
+    })
   }
 }
