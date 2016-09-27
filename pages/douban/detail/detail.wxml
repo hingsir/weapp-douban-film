@@ -57,12 +57,4 @@
         {{film.summary}}
       </view>
     </view>
-    <swiper indicator-dots="true"
-      autoplay="true" interval="3000" duration="1000">
-      <block wx:for="{{film.images}}" wx:for-item="image">
-        <swiper-item>
-          <image src="{{image}}" class="slide-image" width="355" height="150"/>
-        </swiper-item>
-      </block>
-    </swiper>
 </view>
