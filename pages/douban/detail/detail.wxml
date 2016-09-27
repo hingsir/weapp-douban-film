@@ -1,5 +1,5 @@
-<view class="container">
-  <view class="film-item" bindtap="viewDetail" value="{{film.id}}" data-id="{{film.id}}" data-title="{{film.title}}">
+<view class="container film-detail">
+  <view class="film-item">
       <view class="film-image">
         <image src="{{film.images.medium}}"></image>
       </view>
@@ -10,7 +10,7 @@
         </view>
         <view class="film-rating">
           <block wx:if="{{film.rating.average > 0}}">
-            <text class="label">评分</text>
+            <text class="label">评分：</text>
             <text class="rating">{{film.rating.average}}</text>
           </block>
           <block wx:else>
@@ -18,16 +18,36 @@
           </block>
         </view>
         <view class="directors">
-          <text class="label">导演</text>
+          <text class="label">导演：</text>
           <block wx:for-items="{{film.directors}}" wx:for-item="director">
             <text class="person">{{director.name}}</text>
           </block>
         </view>
         <view class="casts">
-          <text class="label">主演</text>
+          <text class="label">主演：</text>
           <block wx:for-items="{{film.casts}}" wx:for-item="cast">
             <text class="person">{{cast.name}}</text>
           </block>
+        </view>
+        <view class="genres">
+          <text class="label">类型：</text>
+          <block wx:for-items="{{film.genres}}" wx:for-item="genre">
+            <text class="person">{{genre}}</text>
+          </block>
+        </view>
+        <view class="genres">
+          <text class="label">国家/地区：</text>
+          <block wx:for-items="{{film.countries}}" wx:for-item="country">
+            <text class="person">{{country}}</text>
+          </block>
+        </view>
+        <view class="collect-wish">
+          <view>
+              看过(<text>{{film.collect_count}}</text>)
+          </view>
+          <view>
+              想看(<text>{{film.wish_count}}</text>)
+          </view>
         </view>
       </view> 
     </view>
@@ -36,6 +56,13 @@
       <view class="content">
         {{film.summary}}
       </view>
-      
     </view>
+    <swiper indicator-dots="true"
+      autoplay="true" interval="3000" duration="1000">
+      <block wx:for="{{film.images}}" wx:for-item="image">
+        <swiper-item>
+          <image src="{{image}}" class="slide-image" width="355" height="150"/>
+        </swiper-item>
+      </block>
+    </swiper>
 </view>

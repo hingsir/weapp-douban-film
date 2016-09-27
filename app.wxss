@@ -41,6 +41,7 @@
 }
 .film-info .label{
   margin-right: 5px;
+  color: #666;
 }
 .film-info .rating{
   color: #e09015;

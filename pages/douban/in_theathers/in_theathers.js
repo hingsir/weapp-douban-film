@@ -30,5 +30,10 @@ Page({
       functions.fetchFilms.call(that, url, city, that.data.start, pageSize, function(data){ })
     })
   },
-  viewDetail: functions.viewDetail
+  viewDetail: function(e){
+    var ds = e.currentTarget.dataset;
+    wx.navigateTo({
+      url: '../detail/detail?id=' + ds.id + '&title=' + ds.title + '&type=ing'
+    })
+  }
 })

@@ -1,12 +1,6 @@
 var store = require('./store.js')
 var config = require('./config.js')
 module.exports = {
-  viewDetail: function(e){
-    var ds = e.currentTarget.dataset;
-    wx.navigateTo({
-      url: '../detail/detail?id=' + ds.id + '&title=' + ds.title
-    })
-  },
   getLocation: function(cb){
     var location = store.location 
     if(location){
