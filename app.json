@@ -25,7 +25,8 @@
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#268dcd",
     "navigationBarTitleText": "豆瓣电影",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh": true
   },
   "debug": true
 }

@@ -1,5 +1,12 @@
-<view class="container film-detail">
-  <view class="film-item">
+<block wx:if="{{showLoading}}">
+  <view class="page-loading">
+    <text class="weui-loading" />
+    <text class="loading-text">玩命加载中</text>
+  </view>
+</block>
+<block wx:else>
+  <view class="container film-detail">
+    <view class="film-item">
       <view class="film-image">
         <image src="{{film.images.medium}}"></image>
       </view>
@@ -43,13 +50,15 @@
         </view>
         <view class="collect-wish">
           <view>
-              看过(<text>{{film.collect_count}}</text>)
+            看过(
+            <text>{{film.collect_count}}</text>)
           </view>
           <view>
-              想看(<text>{{film.wish_count}}</text>)
+            想看(
+            <text>{{film.wish_count}}</text>)
           </view>
         </view>
-      </view> 
+      </view>
     </view>
     <view class="summary">
       <text class="title">剧情简介</text>
@@ -57,4 +66,5 @@
         {{film.summary}}
       </view>
     </view>
-</view>
+  </view>
+</block>

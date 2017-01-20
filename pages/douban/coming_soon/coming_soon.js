@@ -10,7 +10,6 @@ Page({
     start: 0
   },
   onPullDownRefresh: function () {
-    console.log('onPullDownRefresh', new Date())
   },
   scroll: function(e){
     //console.log(e)

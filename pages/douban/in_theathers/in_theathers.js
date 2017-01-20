@@ -11,26 +11,26 @@ Page({
   onPullDownRefresh: function () {
     console.log('onPullDownRefresh', new Date())
   },
-  scroll: function(e){
+  scroll: function (e) {
     //console.log(e)
   },
   onLoad: function () {
     var that = this
-    functions.getCity(function(city){
-      functions.fetchFilms.call(that, url, city, 0, pageSize, function(data){
+    functions.getCity(function (city) {
+      functions.fetchFilms.call(that, url, city, 0, pageSize, function (data) {
         that.setData({
           showLoading: false
         })
       })
     })
   },
-  scrolltolower: function(){
+  scrolltolower: function () {
     var that = this
-    functions.getCity(function(city){
-      functions.fetchFilms.call(that, url, city, that.data.start, pageSize, function(data){ })
+    functions.getCity(function (city) {
+      functions.fetchFilms.call(that, url, city, that.data.start, pageSize, function (data) { })
     })
   },
-  viewDetail: function(e){
+  viewDetail: function (e) {
     var ds = e.currentTarget.dataset;
     wx.navigateTo({
       url: '../detail/detail?id=' + ds.id + '&title=' + ds.title + '&type=ing'
